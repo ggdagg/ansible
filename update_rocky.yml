@@ -3,6 +3,10 @@
 
   tasks:
 
+    - name: Change ssh port to 7711
+      set_fact:
+        ansible_port: 7711
+    
     - name: Upgrade all packages
       ansible.builtin.dnf:
         name: "*"
