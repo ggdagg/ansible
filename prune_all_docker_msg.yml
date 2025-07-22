@@ -23,3 +23,4 @@
           {{ prune_result.images | default(0) }} images, 
           {{ prune_result.networks | default(0) }} networks, 
           and {{ prune_result.volumes | default(0) }} volumes.
+          Pruned {{ prune_result.containers_space_reclaimed | default(0) }} containers.
