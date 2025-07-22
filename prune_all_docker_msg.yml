@@ -14,4 +14,4 @@
         
     - name: Display the reclaimed space
       debug:
-        msg: "Pruned {{ prune_result.containers | length }} containers, {{ prune_result.images | length }} images, {{ prune_result.networks | length }} networks, and {{ prune_result.volumes | length }} volumes."
+        msg: "Pruned {{ prune_result.containers_space_reclaimed | length }} containers, {{ prune_result.images_space_reclaimed | length }} images, {{ prune_result.networks | length }} networks, and {{ prune_result.volumes | length }} volumes."
