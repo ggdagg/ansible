@@ -11,7 +11,15 @@
         networks: true
         volumes: true
       register: prune_result
+
+    - name: Show the full prune result
+      debug:
+        var: prune_result
         
     - name: Display the reclaimed space
       debug:
-        msg: "Pruned {{ prune_result.containers_space_reclaimed | length }} containers, {{ prune_result.images_space_reclaimed | length }} images, {{ prune_result.networks | length }} networks, and {{ prune_result.volumes | length }} volumes."
+        msg: >
+          Pruned {{ prune_result.containers | default(0) }} containers, 
+          {{ prune_result.images | default(0) }} images, 
+          {{ prune_result.networks | default(0) }} networks, 
+          and {{ prune_result.volumes | default(0) }} volumes.
