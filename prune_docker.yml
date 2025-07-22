@@ -5,9 +5,9 @@
   tasks:
   
     - name: Prune everything
-    community.docker.docker_prune:
-      containers: true
-      images: true
-      networks: true
-      volumes: true
-      uilder_cache: true
+      community.docker.docker_prune:
+        containers: true
+        images: true
+        networks: true
+        volumes: true
+        uilder_cache: true
