@@ -10,6 +10,7 @@
         images: true
         networks: true
         volumes: true
+      register: prune_result
         
     - name: Display the reclaimed space
       debug:
