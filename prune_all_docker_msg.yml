@@ -1,0 +1,16 @@
+---
+- hosts: all
+  become: true
+
+  tasks:
+  
+    - name: Prune everything
+      community.docker.docker_prune:
+        containers: true
+        images: true
+        networks: true
+        volumes: true
+        
+    - name: Display the current date
+      debug:
+        msg: "Amount of reclaimed disk space from container pruning in bytes: {{ containers_space_reclaimed }}"
